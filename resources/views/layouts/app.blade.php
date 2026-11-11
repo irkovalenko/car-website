@@ -3,4 +3,3 @@
 @section('childContent')
 @yield('content')
 @endsection
-@include('layouts.components.footer')

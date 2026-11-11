@@ -22,7 +22,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body @isset($cssClass)class="{{ $cssClass }}" @endisset>
     @yield('childContent')
     @include('layouts.components.footer')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"
