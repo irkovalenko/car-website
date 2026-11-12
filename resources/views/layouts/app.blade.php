@@ -1,5 +1,0 @@
-@extends('layouts.basic')
-@include('layouts.components.header')
-@section('childContent')
-@yield('content')
-@endsection

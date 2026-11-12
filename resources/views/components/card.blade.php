@@ -1,5 +1,5 @@
-@props(['color', 'bgColor' => 'white'])
-<div {{$attributes->class("card card-text-{{$color}} card-bg-{{$bgColor}}")}}>
+@props(['bgColor' => 'white', 'color'])
+<div {{$attributes}}->class("card card-text-$color card-bg-$bgColor")>
     <div class="card-header">
         {{ $title }}
     </div>
