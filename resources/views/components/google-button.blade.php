@@ -1,3 +1,4 @@
-<div>
-    <!-- If you do not have a consistent goal in life, you can not live it in a consistent way. - Marcus Aurelius -->
-</div>
+<button class="btn btn-default flex justify-center items-center gap-1">
+    <img src="/img/google.png" alt="" style="width: 20px" />
+    Google
+</button>
