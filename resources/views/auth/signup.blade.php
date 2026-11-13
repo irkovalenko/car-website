@@ -1,4 +1,4 @@
-<x-layouts.base-layout title="Login">
+<x-base-layout title="Signup" bodyClass="page-signup">
     <main>
         <div class="container-small page-login">
             <div class="flex" style="gap: 5rem">
@@ -54,4 +54,4 @@
             </div>
         </div>
     </main>
-</x-layouts.base-layout>
+</x-base-layout>

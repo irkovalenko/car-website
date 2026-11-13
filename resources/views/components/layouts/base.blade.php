@@ -1,3 +1,5 @@
+@props(['title' => '', 'bodyClass' => ''])
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -20,13 +22,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body @isset($cssClass) class="{{ $cssClass }}" @endisset>
-
-    @include('layouts.components.header')
-
+<body @if($bodyClass) class="{{ $bodyClass }}" @endif>
     {{ $slot }}
-
-    @include('layouts.components.footer')
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"></script>
 </body>
