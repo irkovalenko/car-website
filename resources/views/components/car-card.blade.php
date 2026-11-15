@@ -1,7 +1,7 @@
 @props(['car'])
 
 <div class="car-item card">
-    <a href="/view.html">
+    <a href="{{ route('car.show', 1) }}">
         <img src="/img/car-png-39071.png" alt="" class="car-item-img rounded-t" />
     </a>
     <div class="p-medium">

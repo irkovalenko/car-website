@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -21,22 +22,22 @@ class CarController extends Controller
         //
     }
 
-    public function show(string $id)
+    public function show(Car $car)
     {
         return view('car.show');
     }
 
-    public function edit(string $id)
+    public function edit(Car $car)
     {
         return view('car.edit');
     }
 
-    public function update(Request $request, string $id)
+    public function update(Request $request, Car $car)
     {
         //
     }
 
-    public function destroy(string $id)
+    public function destroy(Car $car)
     {
         //
     }
