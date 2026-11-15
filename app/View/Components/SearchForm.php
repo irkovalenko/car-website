@@ -9,8 +9,8 @@ use Illuminate\View\Component;
 class SearchForm extends Component
 {
     public function __construct(
-        public string $action = '/search',
-        public string $method = 'GET'
+        public ?string $action = null,
+        public string $method = 'GET',
     ) {}
 
     public function render(): View|Closure|string
