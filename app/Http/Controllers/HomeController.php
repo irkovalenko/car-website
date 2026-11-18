@@ -9,8 +9,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $fuelTypes = FuelType::updateOrCreate(['name' => 'Electric']);
-        dump($fuelTypes);
         return view('home.index');
     }
 

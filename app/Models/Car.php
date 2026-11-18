@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -43,9 +45,9 @@ class Car extends Model
         return $this->hasOne(CarImage::class)->oldestOfMany('position');
     }
 
-    public function carType(): HasOne
+    public function carType(): BelongsTo
     {
-        return $this->hasOne(CarType::class);
+        return $this->belongsTo(CarType::class);
     }
 
     public function city(): HasOne
@@ -53,9 +55,9 @@ class Car extends Model
         return $this->hasOne(City::class);
     }
 
-    public function fuelType(): HasOne
+    public function fuelType(): BelongsTo
     {
-        return $this->hasOne(FuelType::class);
+        return $this->belongsTo(FuelType::class);
     }
 
     public function maker(): HasOne
@@ -68,8 +70,13 @@ class Car extends Model
         return $this->hasOne(Model::class);
     }
 
-    public function user(): HasOne
+    public function user(): BelongsTo
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
+    }
+
+    public function favouriteByUsers(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'favourite_cars', 'car_id', 'user_id');
     }
 }
