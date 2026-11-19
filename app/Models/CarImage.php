@@ -3,8 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class CarImage extends Model
 {
     protected $fillable = ['path', 'position', 'car_id'];
+
+    public function car(): BelongsTo
+    {
+        return $this->belongsTo(Car::class);
+    }
 }
