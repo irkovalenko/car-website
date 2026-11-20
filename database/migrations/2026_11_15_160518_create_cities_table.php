@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', length: 45);
             $table->foreignId('state_id')->constrained('states');
+            $table->timestamps();
         });
     }
 

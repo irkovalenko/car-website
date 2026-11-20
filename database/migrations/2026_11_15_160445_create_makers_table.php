@@ -12,6 +12,7 @@ return new class extends Migration
         Schema::create('makers', function (Blueprint $table) {
             $table->id();
             $table->string('name', length: 45);
+            $table->timestamps();
         });
     }
 
