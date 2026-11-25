@@ -76,26 +76,6 @@
         <section>
             <div class="container">
                 <h2>Latest Added Cars</h2>
-                @php
-                $cars = collect([
-                ['Amsterdam', 2021, 'Toyota', 'Corolla', 18500, 'Hatchback', 'Hybrid'],
-                ['Rotterdam', 2019, 'Volkswagen', 'Golf', 14900, 'Hatchback', 'Petrol'],
-                ['Utrecht', 2022, 'Tesla', 'Model 3', 38900, 'Sedan', 'Electric'],
-                ['Eindhoven', 2018, 'BMW', '320d', 16700, 'Sedan', 'Diesel'],
-                ['Den Haag', 2020, 'Skoda', 'Octavia', 17200, 'Wagon', 'Petrol'],
-                ['Groningen', 2023, 'Hyundai', 'Kona', 27400, 'SUV', 'Electric'],
-                ['Maastricht',2017, 'Audi', 'A4', 15300, 'Sedan', 'Diesel'],
-                ['Arnhem', 2021, 'Ford', 'Focus', 16100, 'Hatchback', 'Petrol'],
-                ])->map(fn ($c) => (object) [
-                'location' => $c[0],
-                'year' => $c[1],
-                'make' => $c[2],
-                'model' => $c[3],
-                'price' => $c[4],
-                'car_type' => $c[5],
-                'fuel_type'=> $c[6],
-                ]);
-                @endphp
                 <div class="car-items-listing">
                     @foreach ($cars as $car)
                     <x-car-card :car="$car" />
