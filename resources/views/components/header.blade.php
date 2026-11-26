@@ -32,7 +32,7 @@
                         <a href="/car/show">My Cars</a>
                     </li>
                     <li>
-                        <a href="watchlist.html">My Favourite Cars</a>
+                        <a href="/car/watchlist">My Favourite Cars</a>
                     </li>
                     <li>
                         <form action="#" method="post">

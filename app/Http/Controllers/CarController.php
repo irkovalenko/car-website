@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -49,5 +50,14 @@ class CarController extends Controller
         $carCount = $query->count();
         $cars = $query->limit(5)->get();
         return view('car.search', ['cars' => $cars, 'carCount' => $carCount]);
+    }
+
+    public function watchlist()
+    {
+        $user = User::with('favouriteCars.primaryImage')->findOrFail(4);
+
+        return view('car.watchlist', [
+            'cars' => $user->favouriteCars
+        ]);
     }
 }

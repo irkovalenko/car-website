@@ -14,9 +14,4 @@ class HomeController extends Controller
             ->get();
         return view('home.index', ['cars' => $cars]);
     }
-
-    public function guest()
-    {
-        return view('guest.index');
-    }
 }
